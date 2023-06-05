@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adivinhe a Palavra</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="stilos.css">
   <style>
 
 .word-info,
@@ -24,12 +25,11 @@
 </head>
 <body>
   <div class="container">
-    <h1 class="center-align">Adivinhe a Palavra</h1>
+    <h1 class="center-align">ADIVINHE A PALAVRA</h1>
     <div class="row">
       <div class="col s12">
         <div class="card">
-          <div class="card-content">
-            <p class="red-text" id="notification"></p>
+          <div class="card-content"> 
             <div class="row">
               <div class="input-field col s6">
                 <input type="text" id="guess">
@@ -38,7 +38,9 @@
               <div class="col s6">
                 <button class="btn waves-effect waves-light" id="guess-button">Enviar</button>
               </div>
+              
             </div>
+            <p class="red-text" id="notification"></p>
             <h2>Palavra:</h2>
             <p class="word-info" id="word-display"></p>
             <h2>Letras digitadas:</h2>
@@ -53,6 +55,8 @@
       </div>
     </div>
   </div>
+
+  
 
   <script src="/socket.io/socket.io.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

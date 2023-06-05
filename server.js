@@ -17,7 +17,7 @@ let status = 'Jogando';
 
 function initializeGame() {
   // Palavra aleatória
-  const words = ['gato', 'cachorro', 'elefante', 'leao', 'tigre', 'girafa', 'gralha', 'harpia',  'jacu', 'javali',  'kiwi', 'linguado', 'lama', 'marreco',  'sofa', 'mesa', 'cadeira', 'geladeira', 'televisao', 'computador', 'abajur', 'espelho', 'lampada', 'ventilador', 'panela', 'escova', 'aspirador', 'abajur', 'vaso', 'máquina', 'telefone',  'tapete', 'escada', 'prato', 'copo',  'garrafa', 'colher', 'tigela', 'cabide', 'cinzeiro', 'enfeite', 'cadeado', 'faca', 'chave', 'caneta', 'estojo', 'prateleira',  'abajur', 'espelho', 'lampada'];
+  const words = ['gato', 'cachorro', 'elefante', 'leao', 'tigre', 'girafa', 'gralha', 'harpia',  'jacu', 'javali',  'kiwi', 'linguado', 'lama', 'marreco',  'sofa', 'mesa', 'cadeira', 'geladeira', 'televisao', 'computador', 'abajur', 'espelho', 'lampada', 'ventilador', 'panela', 'escova', 'aspirador', 'abajur', 'vaso', 'maquina', 'telefone',  'tapete', 'escada', 'prato', 'copo',  'garrafa', 'colher', 'tigela', 'cabide', 'cinzeiro', 'enfeite', 'cadeado', 'faca', 'chave', 'caneta', 'estojo', 'prateleira',  'abajur', 'espelho', 'lampada'];
   word = words[Math.floor(Math.random() * words.length)];
 
   // Definir o número de vidas com base no tamanho da palavra
