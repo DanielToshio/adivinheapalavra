@@ -37,9 +37,9 @@ socket.on('gameData', (gameData) => {
   guessesDisplay.textContent = gameData.guesses.join(', ');
   livesDisplay.textContent = gameData.lives;
   if (gameData.isGameOver) {
-    gameStatus.textContent = '';
+    gameStatus.textContent = gameData.status;
   } else {
-    
+    gameStatus.textContent = 'Jogando';
   }
   notification.textContent = '';
 });
@@ -50,6 +50,10 @@ socket.on('gameOver', (result) => {
   guessButton.disabled = true;
 });
 
+socket.on('invalidGuess', (message) => {
+  notification.textContent = message;
+});
+
 socket.on('duplicateGuess', (message) => {
   notification.textContent = message;
 });
@@ -57,7 +61,17 @@ socket.on('duplicateGuess', (message) => {
 function isValidGuess(guess) {
   if (!/^[a-zA-Z]$/.test(guess)) {
     notification.textContent = 'Jogada inválida. Informe apenas uma letra.';
+    guessInput.value = '';
     return false;
+    
   }
+
+  if (guess.length > 1) {
+    notification.textContent = 'Jogada inválida. Informe apenas uma letra.';
+    guessInput.value = '';
+    return false;
+    
+  }
+
   return true;
 }

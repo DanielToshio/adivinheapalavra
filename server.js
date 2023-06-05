@@ -11,6 +11,8 @@ const PORT = 3000;
 let word = '';
 let guesses = [];
 let lives = 7;
+let status = 'Jogando';
+
 
 
 function initializeGame() {
@@ -47,17 +49,18 @@ function handleGuess(guess, socket) {
     word: getWordWithGuesses(),
     guesses: guesses,
     lives: lives,
-    
     isGameOver: lives === 0 || !getWordWithGuesses().includes('_'),
+   
+    status: status,
   };
 
   io.sockets.emit('gameData', gameData);
 
   if (gameData.isGameOver) {
     // Fim do jogo
-    const result = lives === 0 ? 'Todos perderam!' : 'Todos venceram!';
+    const result = lives === 0 ? 'Você perdeu!' : 'Você ganhou!';
+    status = result;
     io.sockets.emit('gameOver', result);
-
     setTimeout(initializeGame, 1000);
   }
 }
@@ -77,9 +80,9 @@ io.on('connection', (socket) => {
   socket.emit('gameData', {
     word: getWordWithGuesses(),
     guesses: guesses,
-    lives: lives,
-    
+    lives: lives,    
     isGameOver: false,
+    status: status,
   });
 
   socket.on('guess', (guess) => {
@@ -98,6 +101,7 @@ io.on('connection', (socket) => {
       lives: lives,
       
       isGameOver: false,
+      status: status,
     });
   });
 });
