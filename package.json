@@ -1,0 +1,20 @@
+{
+  "name": "AdivinhaPalavras",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": " npm nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "daemon": "^1.1.0",
+    "express": "^4.18.2",
+    "html": "^1.0.0",
+    "node.js": "^0.0.1-security",
+    "nodemon": "^2.0.22",
+    "socket.io": "^4.6.2"
+  },
+  "description": "��#\u0000 \u0000j\u0000o\u0000g\u0000o\u0000f\u0000o\u0000r\u0000c\u0000a\u0000\r\u0000 \u0000#\u0000 \u0000j\u0000o\u0000g\u0000o\u0000f\u0000o\u0000r\u0000c\u0000a\u0000\r\u0000 \u0000#\u0000 \u0000j\u0000o\u0000g\u0000o\u0000f\u0000o\u0000r\u0000c\u0000a\u0000\r\u0000 \u0000#\u0000 \u0000j\u0000o\u0000g\u0000o\u0000f\u0000o\u0000r\u0000c\u0000a\u0000\r\u0000 \u0000#\u0000 \u0000j\u0000o\u0000g\u0000o\u0000f\u0000o\u0000r\u0000c\u0000a\u0000\r\u0000 \u0000#\u0000 \u0000J\u0000o\u0000g\u0000o\u0000F\u0000o\u0000r\u0000c\u0000a\u0000\r\u0000 \u0000#\u0000 \u0000J\u0000o\u0000g\u0000o\u0000F\u0000o\u0000r\u0000c\u0000a\u0000\r\u0000 \u0000#\u0000 \u0000J\u0000o\u0000g\u0000o\u0000F\u0000o\u0000r\u0000c\u0000a\u0000\r\u0000 \u0000"
+}
