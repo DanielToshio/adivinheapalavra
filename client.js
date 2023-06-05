@@ -44,10 +44,16 @@ socket.on('gameData', (gameData) => {
   notification.textContent = '';
 });
 
-socket.on('gameOver', (result) => {
+socket.on('gameOver', (data) => {
+  const result = data.result;
+  const correctWord = data.word;
+
   gameStatus.textContent = result;
   guessInput.disabled = true;
   guessButton.disabled = true;
+
+  const message = result === 'Você perdeu!' ? `A palavra correta era ${correctWord}.` : '';
+  notification.textContent = message;
 });
 
 socket.on('invalidGuess', (message) => {
@@ -63,14 +69,12 @@ function isValidGuess(guess) {
     notification.textContent = 'Jogada inválida. Informe apenas uma letra.';
     guessInput.value = '';
     return false;
-    
   }
 
   if (guess.length > 1) {
     notification.textContent = 'Jogada inválida. Informe apenas uma letra.';
     guessInput.value = '';
     return false;
-    
   }
 
   return true;

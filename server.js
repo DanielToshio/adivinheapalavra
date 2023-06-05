@@ -50,7 +50,7 @@ function handleGuess(guess, socket) {
     guesses: guesses,
     lives: lives,
     isGameOver: lives === 0 || !getWordWithGuesses().includes('_'),
-   
+    
     status: status,
   };
 
@@ -60,7 +60,7 @@ function handleGuess(guess, socket) {
     // Fim do jogo
     const result = lives === 0 ? 'Você perdeu!' : 'Você ganhou!';
     status = result;
-    io.sockets.emit('gameOver', result);
+    io.sockets.emit('gameOver', { result: result, word: word });
     setTimeout(initializeGame, 1000);
   }
 }
@@ -91,6 +91,15 @@ io.on('connection', (socket) => {
 
   socket.on('disconnect', () => {
     console.log('Jogador desconectado');
+  });
+
+  socket.on('gameOver', (data) => {
+    const result = data.result;
+    const correctWord = data.word;
+  
+    console.log(result);
+    console.log('Palavra correta:', correctWord);
+    // Exiba a palavra correta de alguma forma na interface do jogo
   });
 
   socket.on('restartGame', () => {
