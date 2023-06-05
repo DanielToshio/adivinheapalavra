@@ -4,92 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adivinhe a Palavra</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #f5f5f5;
-    }
 
+.word-info,
+    .guesses-info,
+    .lives-info,
+    .status-info {
+      font-size: 24px;
+    }
     h1 {
-      text-align: center;
-      color: #333;
+      font-size: 28px;
     }
 
-    p {
-      margin-bottom: 10px;
-    }
-
-    label {
-      font-weight: bold;
-    }
-
-    input[type="text"] {
-      padding: 5px;
-      font-size: 16px;
-    }
-
-    button {
-      padding: 5px 10px;
-      font-size: 16px;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-    }
-
-    #game-container {
-      max-width: 500px;
-      margin: 0 auto;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    }
-
-    #word-display,
-    #guesses-display,
-    #lives-display,
-    #game-status,
-    #notification {
-      font-size: 20px;
-      font-weight: bold;
-      color: #333;
-    }
-
-    #restart-button {
-      padding: 10px 20px;
-      font-size: 18px;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      margin-top: 20px;
+    h2 {
+      font-size: 28px;
     }
   </style>
 </head>
 <body>
-  <div id="game-container">
-    <h1>Adivinhe a Palavra</h1>
-    <p id="notification"></p>
-    <p>
-      <label for="guess">Digite uma letra:</label>
-      <input type="text" id="guess">
-      <button id="guess-button">Enviar</button>
-    </p>
-    <h2>Palavra:</h2>
-    <p id="word-display"></p>
-    <h2>Letras digitadas:</h2>
-    <p id="guesses-display"></p>
-    <h2>Vidas restantes:</h2>
-    <p id="lives-display"></p>
-    <h2>Status:</h2>
-    <p id="game-status"></p>
-    <button id="restart-button">Reiniciar Jogo</button>
+  <div class="container">
+    <h1 class="center-align">Adivinhe a Palavra</h1>
+    <div class="row">
+      <div class="col s12">
+        <div class="card">
+          <div class="card-content">
+            <p class="red-text" id="notification"></p>
+            <div class="row">
+              <div class="input-field col s6">
+                <input type="text" id="guess">
+                <label for="guess">Digite uma letra:</label>
+              </div>
+              <div class="col s6">
+                <button class="btn waves-effect waves-light" id="guess-button">Enviar</button>
+              </div>
+            </div>
+            <h2>Palavra:</h2>
+            <p class="word-info" id="word-display"></p>
+            <h2>Letras digitadas:</h2>
+            <p class="guesses-info" id="guesses-display"></p>
+            <h2>Vidas restantes:</h2>
+            <p class="lives-info" id="lives-display"></p>
+            <h2>Status:</h2>
+            <p class="status-info" id="game-status"></p>
+            <button class="btn waves-effect waves-light" id="restart-button">Reiniciar Jogo</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="/socket.io/socket.io.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="client.js"></script>
 </body>
 </html>
