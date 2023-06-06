@@ -39,7 +39,7 @@ socket.on('gameData', (gameData) => {
   if (gameData.isGameOver) {
     gameStatus.textContent = gameData.status;
   } else {
-    gameStatus.textContent = 'Jogando';
+    gameStatus.textContent = '';
   }
   notification.textContent = '';
 });
@@ -52,7 +52,7 @@ socket.on('gameOver', (data) => {
   guessInput.disabled = true;
   guessButton.disabled = true;
 
-  const message = result === 'Você perdeu!' ? `A palavra correta era ${correctWord}.` : '';
+  const message = result === 'Você Errou!' ? `A palavra correta era ${correctWord}.` : '';
   notification.textContent = message;
 });
 

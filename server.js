@@ -58,7 +58,7 @@ function handleGuess(guess, socket) {
 
   if (gameData.isGameOver) {
     // Fim do jogo
-    const result = lives === 0 ? 'Você perdeu!' : 'Você ganhou!';
+    const result = lives === 0 ? 'Você Errou!' : 'Você Acertou!';
     status = result;
     io.sockets.emit('gameOver', { result: result, word: word });
     setTimeout(initializeGame, 1000);
@@ -99,7 +99,7 @@ io.on('connection', (socket) => {
   
     console.log(result);
     console.log('Palavra correta:', correctWord);
-    // Exiba a palavra correta de alguma forma na interface do jogo
+    
   });
 
   socket.on('restartGame', () => {

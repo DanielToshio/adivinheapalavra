@@ -64,15 +64,30 @@ input[type="text"] {
 
 .red-text {
   color: red;
-  margin-top: 10px;
+  margin-top: 0px;
+  text-align: center;
+  font-size: 200%;
 }
 
 .word-info,
 .guesses-info,
-.lives-info,
-.status-info {
+.lives-info{
   font-size: 24px;
   margin-top: 20px;
   color: #333;
 }
 
+.status-info {
+  color: red;
+  margin-top: 0px;
+  text-align: center;
+  font-size: 200%;
+  
+}
+
+.guesses-info,
+{
+  font-size: 24px;
+  margin-top: 20px;
+  color: white;
+}

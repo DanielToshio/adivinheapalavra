@@ -14,7 +14,28 @@
   <div class="container">
     <h1>Adivinhe a Palavra</h1>
 
+    <div class="input-container">
+      <input type="text" id="guess" placeholder="Informe uma letra" maxlength="1">
+      <button id="guess-button" class="btn">Enviar</button>
+    </div>
+    <br>
+
     <div class="card">
+      <div class="status-info">
+        <label></label>
+        <span id="game-status"></span>
+      </div>
+      <div class="notification red-text" id="notification"></div>
+    </div>
+
+
+    <br>
+
+
+    <div class="card">
+
+      
+
       <div class="word-info">
         <label>Palavra:</label>
         <span id="word-display"></span>
@@ -31,18 +52,13 @@
       </div>
 
       <div class="status-info">
-        <label>Status:</label>
+        <label></label>
         <span id="game-status"></span>
       </div>
 
-      <div class="notification red-text" id="notification"></div>
+      <br>
 
-      <div class="input-container">
-        <input type="text" id="guess" placeholder="Informe uma letra" maxlength="1">
-        <button id="guess-button" class="btn">Enviar</button>
-      </div>
-
-      <button id="restart-button" class="btn">Reiniciar</button>
+      <button id="restart-button" class="btn">Reiniciar Partida</button>
     </div>
 
     
